@@ -1,8 +1,14 @@
 plugins {
-    application
     kotlin("jvm")
 }
 
+val opencsvVersion: String by project
+val springVersion: String by project
+
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation(project(":common"))
+    implementation("com.opencsv:opencsv:$opencsvVersion")
+    implementation("org.springframework:spring-context:${springVersion}")
+
+    implementation(kotlin("stdlib-jdk8"))
 }

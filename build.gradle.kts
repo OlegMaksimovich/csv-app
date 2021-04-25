@@ -1,29 +1,42 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-plugins {
-    base
-    kotlin("jvm") version "1.4.32"
+buildscript {
+    repositories {
+        mavenCentral()
+    }
 }
+
+plugins {
+    kotlin("jvm") version "1.4.32" apply false
+    kotlin("plugin.spring") version "1.4.32" apply false
+    id("io.spring.dependency-management") version "1.0.11.RELEASE" apply false
+    id("org.springframework.boot") version "2.4.5" apply false
+}
+
 
 allprojects {
     group = "by.issoft"
     version = "1.0-SNAPSHOT"
 
-    repositories {
-        jcenter()
+    tasks.withType<JavaCompile> {
+        sourceCompatibility = "1.8"
+        targetCompatibility = "1.8"
+    }
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            jvmTarget = "1.8"
+        }
     }
 }
 
-dependencies {
-    testImplementation(kotlin("test-junit5"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
-}
+subprojects {
+    repositories {
+        mavenCentral()
+    }
 
-tasks.test {
-    useJUnitPlatform()
-}
-
-tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "1.8"
+    apply {
+        plugin("io.spring.dependency-management")
+    }
 }

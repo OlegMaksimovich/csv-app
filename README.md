@@ -1,10 +1,10 @@
 # csv-app
 Parent for csv related modules
 
-1. [api](./api) implements REST API
-2. [backend](./backend) implements app logic
-3. [cli](./cli) implements the command line interface
-4. [model](./common) contains model, mappers and utility classes
+1. [api](./api) app interfaces
+2. [backend](./backend) service layer implementation
+3. [cli](./cli) user's command line interface
+4. [by.issoft.common](./common) contains models, mappers and utility classes
 
 # Build
 
