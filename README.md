@@ -1,5 +1,5 @@
 # csv-app
-Parent for csv related modules
+Kotlin multi-module app with Gradle's Kotlin DSL and Spring Boot
 
 1. [api](./api) app interfaces
 2. [backend](./backend) service layer implementation
