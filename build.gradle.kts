@@ -11,6 +11,7 @@ plugins {
     kotlin("plugin.spring") version "1.4.32" apply false
     id("io.spring.dependency-management") version "1.0.11.RELEASE" apply false
     id("org.springframework.boot") version "2.4.5" apply false
+    id("org.flywaydb.flyway") version "7.8.2" apply false
 }
 
 
