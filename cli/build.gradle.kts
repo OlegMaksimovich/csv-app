@@ -16,16 +16,23 @@ dependencies {
 
     implementation(kotlin("stdlib-jdk8"))
 
-//    cli interface
-    implementation("info.picocli:picocli:${picocliVersion}")
-
     implementation("org.springframework.boot:spring-boot-starter")
-//    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 
 //    database dependencies
     implementation("org.flywaydb:flyway-core:${flywaydbVersion}")
     implementation("com.h2database:h2:${h2DBVersion}")
-//    implementation("mysql:mysql-connector-java:${mysqlVersion}")
+    implementation("mysql:mysql-connector-java:${mysqlVersion}")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+flyway {
+    url = System.getProperty("DB_URL", "jdbc:h2:mem:DATABASE")
+    user = System.getProperty("DB_USER", "sa")
+    password = System.getProperty("DB_PASSWORD", "")
+
+    baselineOnMigrate = true
+    locations = arrayOf("filesystem:../db/migration")
+    schemas = arrayOf("observation")
 }
