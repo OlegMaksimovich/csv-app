@@ -11,3 +11,5 @@ backend/build
 cli/build
 common/build
 db/flyway.conf
+/db/flyway.conf
+flyway.conf
