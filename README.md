@@ -45,8 +45,14 @@ CSV_APP_DB_PASSWORD={your_db_user_password}
 ./gradlew flywayMigrate
 ```
 
-## using cli args
+## using cli args to specify db connection params
 
 ```
 ./gradlew -DCSV_APP_DB_URL={your_db_connection_url} -DCSV_APP_DB_USER={your_db_user_name} -DCSV_APP_DB_PASSWORD={your_db_user_password} flywayMigrate
+```
+
+## using flyway.conf file to specify db connection params (isn't tracked by git)
+
+```
+./gradlew -Dflyway.configFiles=../db/flyway.conf flywayMigrate
 ```
