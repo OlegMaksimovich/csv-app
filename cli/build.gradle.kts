@@ -27,12 +27,14 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
+//FIXME: export system variables not working, need to fix
 flyway {
-    url = System.getProperty("DB_URL", "jdbc:h2:mem:DATABASE")
-    user = System.getProperty("DB_USER", "sa")
-    password = System.getProperty("DB_PASSWORD", "")
+    url = System.getProperty("CSV_APP_DB_URL", "jdbc:h2:mem:DATABASE")
+    user = System.getProperty("CSV_APP_DB_USER", "sa")
+    password = System.getProperty("CSV_APP_DB_PASSWORD", "")
 
     baselineOnMigrate = true
     locations = arrayOf("filesystem:../db/migration")
     schemas = arrayOf("observation")
+    encoding = "UTF-8"
 }

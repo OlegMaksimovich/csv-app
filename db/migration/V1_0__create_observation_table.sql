@@ -1,49 +1,11 @@
-create table if not exists `observation`
-(
-    `obs`
-    int
-    not
-    null
-    PRIMARY
-    KEY,
-    `date`
-    date
-    not
-    null,
-    `latitude`
-    decimal
-(
-    3,
-    2
-) not null,
-    `longitude` decimal
-(
-    3,
-    2
-) not null,
-    `zonWinds` decimal
-(
-    2,
-    2
-),
-    `merWinds` decimal
-(
-    2,
-    2
-),
-    `humidity` decimal
-(
-    2,
-    2
-),
-    `airTemp` decimal
-(
-    2,
-    2
-),
-    `sSTemp` decimal
-(
-    2,
-    2
+CREATE TABLE IF NOT EXISTS `observation` (
+    `obs` INTEGER PRIMARY KEY,
+    `date` DATE NOT NULL,
+    `latitude` DECIMAL (3,2) NOT NULL,
+    `longitude` DECIMAL(3,2) NOT NULL,
+    `zonWinds` DECIMAL(2,2),
+    `merWinds` DECIMAL(2,2),
+    `humidity` DECIMAL(2,2),
+    `airTemp` DECIMAL(2,2),
+    `sSTemp` DECIMAL(2,2)
 )
-    ) ENGINE=InnoDB DEFAULT CHARSET=UTF8;

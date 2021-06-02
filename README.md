@@ -24,10 +24,29 @@ Run a clean build of the project with the following
 ./gradlew clean build
 ```
 
-# Run migration
+# Run migration options:
 
-Run from parent project folder
+*Run from parent project folder*
 
+## using default params (using h2DB)
 ```
 ./gradlew flywayMigrate
+```
+
+## using system variables to specify db connection params
+ 1. specify the next system variables
+```
+CSV_APP_DB_URL={your_db_connection_url}
+CSV_APP_DB_USER={your_db_user_name}
+CSV_APP_DB_PASSWORD={your_db_user_password}
+```
+ 2. then, execute
+```
+./gradlew flywayMigrate
+```
+
+## using cli args
+
+```
+./gradlew -DCSV_APP_DB_URL={your_db_connection_url} -DCSV_APP_DB_USER={your_db_user_name} -DCSV_APP_DB_PASSWORD={your_db_user_password} flywayMigrate
 ```
