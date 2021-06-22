@@ -9,7 +9,7 @@ import java.io.BufferedReader
 import java.io.FileReader
 
 @Repository
-class CsvObservationRepositoryImpl : CsvObservationRepository {
+open class CsvObservationRepositoryImpl : CsvObservationRepository {
     companion object {
         const val CSV_FILE_SEPARATOR = ' '
     }

@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS `observation` (
     `humidity` DECIMAL(2,2),
     `airTemp` DECIMAL(2,2),
     `sSTemp` DECIMAL(2,2)
-)
+);

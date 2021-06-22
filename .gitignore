@@ -10,6 +10,6 @@ api/build
 backend/build
 cli/build
 common/build
-db/flyway.conf
-/db/flyway.conf
+backend/src/main/resources/db/flyway.conf
+/backend/src/main/resources/db/flyway.conf
 flyway.conf
