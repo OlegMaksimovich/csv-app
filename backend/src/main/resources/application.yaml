@@ -1,8 +1,9 @@
 spring:
   datasource:
-    url: ${CSV_APP_DB_URL:jdbc:h2:mem:DATABASE}
-    username: ${CSV_APP_DB_USER:'sa'}
-    password: ${CSV_APP_DB_PASSWORD:''}
+    url: ${CSV_APP_DB_URL:jdbc:h2:mem:observation}
+    username: ${CSV_APP_DB_USER:sa}
+    password: ${CSV_APP_DB_PASSWORD:}
 
   flyway:
     schemas: observation
+    default-schema: observation

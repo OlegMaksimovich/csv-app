@@ -27,7 +27,7 @@ dependencies {
 }
 
 flyway {
-    url = System.getProperty("CSV_APP_DB_URL", "jdbc:h2:mem:DATABASE")
+    url = System.getProperty("CSV_APP_DB_URL", "jdbc:h2:mem:observation")
     user = System.getProperty("CSV_APP_DB_USER", "sa")
     password = System.getProperty("CSV_APP_DB_PASSWORD", "")
 
