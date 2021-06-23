@@ -57,7 +57,7 @@ CSV_APP_DB_PASSWORD={your_db_user_password} # ex. password
 ./gradlew -Dflyway.configFiles=../db/flyway.conf flywayMigrate
 ```
 
-#Run csv-app
+# Run csv-app
 
  1. Specify environment variables to connect to DB (you can skip and use h2DB by default)
 
